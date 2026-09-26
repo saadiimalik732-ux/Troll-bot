@@ -58,7 +58,7 @@ Try:
 
 ## Model
 
-The Worker currently uses `gemini-3.5-flash`.
+The Worker currently uses `gemini-3.8-flash`.
 You can change `MODEL` in `src/index.js` if you want another Gemini model.
 
 ## Security
