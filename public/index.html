@@ -1,1 +1,115 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TrollBot 🤡</title><link rel="stylesheet" href="/style.css"></head><body><header><div class="brand">🤡 <span><b>TrollBot</b><small>AI ka dimaag, bakchodi unlimited</small></span></div><button id="soundBtn">🔊</button></header><main><section class="hero"><div class="badge">⚡ 100% TROLL MODE</div><h1>Ask anything.<br><span>Get trolled.</span></h1><p>Normal chatbot nahi. Yahan answers nahi, <b>beizzati with love</b> milti hai. 😂</p></section><section class="chat"><div class="chathead"><span>🟢 TrollBot online</span><button id="clear">🗑 Clear</button></div><div id="messages"><div class="msg bot"><i>🤡</i><div>Aaja bhai 😭 Sawal puch. Answer ki guarantee nahi, trolling ki 100% hai. 💀</div></div></div><div class="chips"><button data-q="Bhai 2+2 kitna hota hai?">🧮 2+2?</button><button data-q="Kal school jana hai?">🏫 School?</button><button data-q="Mujhe roast kar">🔥 Roast me</button><button data-q="Random bakchodi">🎲 Bakchodi</button></div><form id="form"><input id="input" maxlength="1200" placeholder="Kuch bhi puch... regret baad mein hoga 😭"><button>➤</button></form></section><section class="zone"><h2>🎭 Button dabao, izzat gawao</h2><div class="grid"><button data-a="meme">😂<b>Random Meme</b><small>Surprise incoming</small></button><button data-a="boom">💀<b>Vine Boom</b><small>Volume sambhal</small></button><button data-a="bonk">🔨<b>Bonk</b><small>Dimagh check</small></button><button data-a="trap">🕺<b>Suspicious Button</b><small>Click kar ke dekh</small></button></div></section><footer>Made for fun • TrollBot 🤡</footer></main><div id="overlay" class="hidden"><button id="close">✕</button><div class="pop"><div id="emoji">😂</div><h2 id="title">BROOO 💀</h2><p id="text"></p><img id="meme" alt="funny meme"></div></div><script src="/app.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111315">
+  <title>TrollBot — Abnormal Answers</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">TB</div>
+        <div>
+          <div class="brand-name">TrollBot</div>
+          <div class="brand-sub">Abnormal Answers</div>
+        </div>
+      </div>
+
+      <button class="new-chat" id="newChat">＋ New chat</button>
+
+      <div class="side-section">
+        <div class="side-label">QUICK TROLLS</div>
+        <button class="quick" data-prompt="Bhai meri padhai kyun nahi ho rahi?">📚 Study crisis</button>
+        <button class="quick" data-prompt="Mujhe roast karo, lekin funny wala.">🔥 Roast me</button>
+        <button class="quick" data-prompt="Kal school jana zaroori hai?">🏫 School problem</button>
+        <button class="quick" data-prompt="Mere liye ek ridiculous excuse banao.">🎭 Fake excuse</button>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="status-row"><span class="status-dot"></span> Gemini connected</div>
+        <div class="tiny">School project • entertainment mode</div>
+      </div>
+    </aside>
+
+    <main class="chat-area">
+      <header class="topbar">
+        <div>
+          <div class="mobile-brand">TrollBot</div>
+          <div class="chat-title">Troll Chamber</div>
+          <div class="chat-subtitle">Normal questions are not safe here.</div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" id="soundToggle" title="Toggle sounds">🔊</button>
+          <button class="icon-btn" id="themeToggle" title="Toggle theme">☾</button>
+        </div>
+      </header>
+
+      <section class="messages" id="messages">
+        <div class="welcome">
+          <div class="welcome-icon">🤡</div>
+          <h1>Welcome to TrollBot</h1>
+          <p>Question normal. Answer abnormal. Every reply is generated fresh.</p>
+          <div class="starter-grid">
+            <button class="starter" data-prompt="2+2 kitna hota hai?">🧮 <span>2+2?</span></button>
+            <button class="starter" data-prompt="Who are you?">🤖 <span>Who are you?</span></button>
+            <button class="starter" data-prompt="Mujhe kal exam hai kya karun?">😵 <span>Exam panic</span></button>
+            <button class="starter" data-prompt="Mere dost ko ek funny message bhejna hai.">💬 <span>Funny message</span></button>
+          </div>
+        </div>
+      </section>
+
+      <div class="typing" id="typing"><span></span><span></span><span></span><em>TrollBot is cooking...</em></div>
+
+      <form class="composer" id="composer">
+        <div class="input-wrap">
+          <textarea id="input" rows="1" maxlength="1200" placeholder="Kuch bhi pooch... regret baad mein karna 😭"></textarea>
+          <button class="send" type="submit" title="Send">➤</button>
+        </div>
+        <div class="composer-meta">
+          <span>Enter = send • Shift+Enter = new line</span>
+          <span id="charCount">0/1200</span>
+        </div>
+      </form>
+    </main>
+
+    <aside class="fun-panel">
+      <div class="panel-title">
+        <div>
+          <div class="eyebrow">RANDOMIZER</div>
+          <h2>Funny Stuff</h2>
+        </div>
+        <div class="shuffle">↻</div>
+      </div>
+
+      <div class="meme-card" id="memeCard">
+        <div class="meme-top">
+          <span id="memeTag">SCHOOL</span>
+          <span>MEME #<b id="memeNumber">01</b></span>
+        </div>
+        <div class="meme-emoji" id="memeEmoji">📚</div>
+        <div class="meme-title" id="memeTitle">Homework submitted successfully.</div>
+        <div class="meme-punch" id="memePunch">Unfortunately, to the wrong universe.</div>
+      </div>
+
+      <button class="meme-btn" id="memeBtn">🎲 Generate another meme</button>
+
+      <div class="sound-grid">
+        <button data-sound="boom">💥 Boom</button>
+        <button data-sound="bonk">🔨 Bonk</button>
+        <button data-sound="sus">🤨 Suspicious</button>
+        <button data-sound="pop">✨ Pop</button>
+      </div>
+
+      <div class="panel-note">
+        <strong>Tip</strong>
+        <p>Har click par naya scene. Same meme repeat nahi hoga jab tak list cycle complete na ho.</p>
+      </div>
+    </aside>
+  </div>
+
+  <script src="/app.js"></script>
+</body>
+</html>
