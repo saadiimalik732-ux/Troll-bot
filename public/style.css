@@ -5,8 +5,8 @@
   --line: #292e33;
   --text: #f1f3f5;
   --muted: #8f969d;
-  --accent: #9a8cff;
-  --accent-2: #7568e8;
+  --accent: #b7e36b;
+  --accent-2: #ff8a3d;
   --bubble: #20252a;
   --white: #ffffff;
   --danger: #ff7777;
@@ -133,8 +133,23 @@ textarea::placeholder { color: #626a71; }
   width: 35px; height: 35px; border: 0; border-radius: 9px; background: var(--accent);
   color: #111; font-weight: 900;
 }
-.send:hover { background: #afa5ff; }
+.send:hover { background: #c8ef86; }
 .composer-meta { display: flex; justify-content: space-between; color: #5f676e; font-size: 9px; padding: 7px 4px 0; }
+
+.credit-footer {
+  width: min(720px, calc(100% - 40px));
+  margin: -8px auto 10px;
+  padding: 8px 4px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #5f676e;
+  font-size: 9px;
+  line-height: 1.4;
+  border-top: 1px solid var(--line);
+}
+.credit-footer strong { color: #8b949b; font-weight: 800; }
+.light .credit-footer strong { color: #4e565d; }
 
 .fun-panel { border-left: 1px solid var(--line); background: #111315; padding: 21px 17px; }
 .panel-title { display: flex; justify-content: space-between; align-items: flex-start; }
@@ -194,4 +209,5 @@ textarea::placeholder { color: #626a71; }
   .bubble { max-width: 84%; }
   .composer { width: calc(100% - 22px); padding-bottom: 10px; }
   .composer-meta { font-size: 8px; }
+  .credit-footer { width: calc(100% - 22px); margin-top: -3px; padding-bottom: 7px; flex-direction: column; gap: 2px; text-align: center; }
 }

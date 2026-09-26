@@ -133,7 +133,7 @@ async function sendMessage(text) {
     history.push({ role: "model", text: data.reply });
     if (soundOn) playSound("pop");
   } catch (err) {
-    addMessage(err.message || "Troll engine offline 😭", "bot", true);
+    addMessage(err.message || "Rage engine offline 😭", "bot", true);
     history.pop();
   } finally {
     setTyping(false);
