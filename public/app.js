@@ -126,8 +126,15 @@ async function sendMessage(text) {
       })
     });
 
-    const data = await res.json();
-    if (!res.ok) throw new Error(data.error || "Request failed");
+    const raw = await res.text();
+    let data = {};
+    try {
+      data = raw ? JSON.parse(raw) : {};
+    } catch {
+      throw new Error(`Server returned an invalid response (${res.status}).`);
+    }
+    if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
+    if (!data.reply) throw new Error("Rage Bro ne empty reply diya 😭");
 
     addMessage(data.reply, "bot");
     history.push({ role: "model", text: data.reply });
