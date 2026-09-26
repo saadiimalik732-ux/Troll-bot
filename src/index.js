@@ -1,4 +1,4 @@
-const MODEL = "gemini-3.5-flash";
+const MODEL = "gemini-3.8-flash";
 const MAX_HISTORY = 12;
 
 const SYSTEM_INSTRUCTION = `
@@ -91,20 +91,27 @@ export default {
               },
               contents,
               generationConfig: {
-                temperature: 1.35,
-                topP: 0.95,
                 maxOutputTokens: 180
               }
             })
           }
         );
 
-        const data = await response.json();
+        const raw = await response.text();
+        let data = {};
+        try {
+          data = raw ? JSON.parse(raw) : {};
+        } catch {
+          data = { raw };
+        }
 
         if (!response.ok) {
-          console.error("Gemini API error", response.status, data);
+          console.error("Gemini API error", response.status, raw);
+          const apiMessage = String(data?.error?.message || "").trim();
           return json({
-            error: "Gemini ne reply dene se mana kar diya 😭 Thori der baad try karo."
+            error: apiMessage
+              ? `Gemini error (${response.status}): ${apiMessage}`
+              : `Gemini request failed (${response.status}).`
           }, 502);
         }
 
