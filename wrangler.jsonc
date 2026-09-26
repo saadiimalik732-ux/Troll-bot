@@ -9,14 +9,11 @@
     "directory": "./public",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application",
-    "run_worker_first": [
-      "/health",
-      "/api/*"
-    ]
-  },
-  "secrets": {
-    "required": [
-      "GEMINI_API_KEY"
-    ]
+    // Without this, Cloudflare can serve /health and /api/chat straight from
+    // the static-assets layer when they don't match a file in ./public --
+    // that's why visiting /health directly in a browser was returning a 404
+    // instead of ever reaching the Worker code in src/index.js. This forces
+    // those two paths to always run the Worker first.
+    "run_worker_first": ["/api/*", "/health"]
   }
 }
