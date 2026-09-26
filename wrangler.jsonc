@@ -3,11 +3,14 @@
   "name": "troll-bot",
   "main": "src/index.js",
   "compatibility_date": "2026-09-26",
+  "workers_dev": true,
+  "preview_urls": true,
   "assets": {
     "directory": "./public",
     "binding": "ASSETS",
     "not_found_handling": "single-page-application"
   },
-  "workers_dev": true,
-  "preview_urls": true
+  "secrets": {
+    "required": ["GEMINI_API_KEY"]
+  }
 }

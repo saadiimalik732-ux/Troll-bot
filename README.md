@@ -1,20 +1,21 @@
-# TrollBot — rebuilt
+# Rage Bro — rebuilt
 
 A clean Cloudflare Workers chatbot for a school project.
+
+© 2026 Rage Bro — Created by Saad Malik & Ghulam Dastagir.
 
 ## What changed
 
 - Gemini API on the server side (API key is a Cloudflare Secret, never frontend code)
 - Fresh Hinglish trolling instead of fixed replies
 - Conversation history so replies can react to the previous messages
-- No "bakchodi" wording
 - Random meme generator with 20 different built-in meme cards
 - No external meme-image dependency
 - Web Audio sound effects: Boom, Bonk, Suspicious, Pop
 - Sound ON/OFF
 - Light/dark mode
 - Responsive mobile UI
-- Worker name matches the Cloudflare project: `troll-bot`
+- Worker name remains `troll-bot` to preserve the existing Cloudflare project URL; the visible bot name is `Rage Bro`.
 
 ## 1) Add the Gemini key
 
